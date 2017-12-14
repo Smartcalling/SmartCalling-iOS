@@ -1,0 +1,8 @@
+platform :ios, '9.0'
+use_frameworks!
+
+target 'SmartCalling_Example' do
+
+  pod 'SmartCallingSDK', :path => '../'
+
+end
