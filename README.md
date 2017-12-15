@@ -32,6 +32,8 @@ First you need to add the profiles folder named _SmartCalling_. It should contai
 
 <img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Screenshots/add_folder.png" width="400">
 
+Sample SmartCalling folder can be found in the example project. (SmartCalling-iOS/Example/SmartCalling/SmartCalling)
+
 ### 2. Permissions
 
 To add contacts to users device, the app needs permission for Contacts. You need to add a usage description in the Info.plist file for the key _NSContactsUsageDescription_ with a text value.
