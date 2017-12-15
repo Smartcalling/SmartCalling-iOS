@@ -1,6 +1,0 @@
-framework module SmartCallingSDK {
-    umbrella header "SmartCallingSDK.h"
-
-    export *
-    module * { export * }
-}
