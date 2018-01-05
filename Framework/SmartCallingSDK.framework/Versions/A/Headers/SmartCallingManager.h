@@ -11,6 +11,6 @@
 @interface SmartCallingManager : NSObject
 
 +(instancetype)shared;
--(BOOL)importProfilesFromEmbeddedPlist;
+-(void)importProfilesFromEmbeddedPlist:(void (^)(NSError* error))completionHandler;
 
 @end

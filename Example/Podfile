@@ -6,3 +6,9 @@ target 'SmartCalling_Example' do
   pod 'SmartCallingSDK', :path => '../'
 
 end
+
+target 'SmartCallingCallKitProvider' do
+
+    pod 'SmartCallingSDK', :path => '../'
+
+end

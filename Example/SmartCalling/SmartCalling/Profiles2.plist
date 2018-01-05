@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-        <key>firstName</key>
-        <string>Test Profile 2</string>
-        <key>image</key>
-        <string>smartcalling.png</string>
-        <key>modifiedDate</key>
-        <date>2017-11-23T00:37:58Z</date>
-        <key>numbers</key>
-        <array>
-            <string>11111119</string>
-            <string>22222229</string>
-            <string>33333339</string>
-            <string>44444449</string>
-            <string>55555559</string>
-            <string>66666669</string>
-            <string>77777779</string>
-        </array>
-    </dict>
+<dict>
+	<key>firstName</key>
+	<string>Test Profile 2</string>
+	<key>image</key>
+	<string>smartcalling.png</string>
+	<key>modifiedDate</key>
+	<date>2018-01-04T23:41:32Z</date>
+	<key>numbers</key>
+	<array>
+		<string>11111119</string>
+		<string>22222229</string>
+		<string>33333339</string>
+		<string>44444449</string>
+		<string>55555559</string>
+		<string>66666669</string>
+		<string>77777779</string>
+	</array>
+</dict>
 </plist>
-

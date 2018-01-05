@@ -19,8 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        let success = SmartCallingManager.shared().importProfilesFromEmbeddedPlist()
-        print("SmartCalling Import Profiles Succeeded: \(success)")
+        SmartCallingManager.shared().importProfiles { error in
+            if let error = error {
+                print("SmartCalling Import Profiles Failed: \(error)")
+            } else {
+                print("SmartCalling Import Profiles Succeeded")
+            }
+        }
+
     }
 
 }
