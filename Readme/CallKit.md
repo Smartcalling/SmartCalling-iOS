@@ -17,7 +17,7 @@ Add the profiles plist file named _SmartCallingCallKit.plist_ to the extension t
 <img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/call_kit_res_1.png" width="200">
 <img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/call_kit_res_2.png" width="400">
 
-### 3. Import Framework
+## 3. Import Framework
 
 To use the SDK you first need to import it. To do that in Swift just add
 ```swift
@@ -30,7 +30,7 @@ If you want to use in an Objective-C class, use this import line:
 @import SmartCallingSDK;
 ```
 
-### 4. Import Embedded Profiles
+## 4. Import Embedded Profiles
 
 To actually use the SDK and import profiles for call identification, use the code below for CallDirectoryHandler. You can delete boilerplate for provided by Xcode.
 
@@ -54,3 +54,8 @@ Objective-C:
     [context completeRequestWithCompletionHandler:nil];
 }
 ```
+## 5. How-to enable Call Identification
+
+Users will need to manually enable Call Identification to benefit from this feature. You can choose to notify users how to do this with an Alert View or a custom screen. They need to open *Settings > Phone > Call Blocking & Identification* and enable your application.
+
+<img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/call_kit_settings.png" width="600">
