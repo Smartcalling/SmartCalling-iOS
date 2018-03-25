@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        // Set Api Key
+        SmartCallingManager.shared().setApiKey("XXXX-XXXX-XXXX-XXXX")
+
+        // Offline integration
         SmartCallingManager.shared().importProfiles { error in
             if let error = error {
                 print("SmartCalling Import Profiles Failed: \(error)")
@@ -27,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 
+        // Online integration
+        SmartCallingManager.shared().updateProfiles({ error in
+            if let error = error {
+                print("SmartCalling Import Profiles Failed: \(error)")
+            } else {
+                print("SmartCalling Import Profiles Succeeded")
+            }
+        })
     }
 
 }

@@ -11,6 +11,8 @@
 @interface SmartCallingManager : NSObject
 
 +(instancetype)shared;
+-(void)setApiKey:(NSString*)apiKey;
 -(void)importProfilesFromEmbeddedPlist:(void (^)(NSError* error))completionHandler;
+-(void)updateProfiles:(void (^)(NSError* error))completionHandler;
 
 @end
