@@ -71,9 +71,9 @@ func applicationDidBecomeActive(_ application: UIApplication) {
     SmartCallingManager.shared().setApiKey("XXXX-XXXX-XXXX-XXXX")
     SmartCallingManager.shared().updateProfiles { error in
         if let error = error {
-            print("SmartCalling Import Profiles Failed: \(error)")
+            print("SmartCalling Update Profiles Failed: \(error)")
         } else {
-            print("SmartCalling Import Profiles Succeeded")
+            print("SmartCalling Update Profiles Succeeded")
         }
     }
 }
@@ -84,9 +84,9 @@ Objective-C:
     [SmartCallingManager.shared setApiKey:@"XXXX-XXXX-XXXX-XXXX"];
     [SmartCallingManager.shared importProfilesFromEmbeddedPlist:^(NSError *error) {
         if (error) {
-            NSLog(@"SmartCalling Import Profiles Failed: %@", error.localizedDescription);
+            NSLog(@"SmartCalling Update Profiles Failed: %@", error.localizedDescription);
         } else {
-            NSLog(@"SmartCalling Import Profiles Succeeded");
+            NSLog(@"SmartCalling Update Profiles Succeeded");
         }
     }];
 }
