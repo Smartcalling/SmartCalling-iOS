@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		81CC589C2DDA1BDF59DA28D5 /* Pods_SmartCallingCallKitProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6948652658FD713A15354BB /* Pods_SmartCallingCallKitProvider.framework */; };
 		8BE3D9B997077F11494373A0 /* Pods_SmartCalling_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2394E945C741E7221D12D6A /* Pods_SmartCalling_Example.framework */; };
+		FB1C729B2107EA1D003928F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB1C729A2107EA1D003928F8 /* GoogleService-Info.plist */; };
 		FB2F4B1620003FB700C680B3 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2F4B1520003FB700C680B3 /* CallDirectoryHandler.swift */; };
 		FB2F4B1A20003FB700C680B3 /* SmartCallingCallKitProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB2F4B1320003FB700C680B3 /* SmartCallingCallKitProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FB2F4B1E2000401300C680B3 /* SmartCallingCallKit.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2F4B092000328D00C680B3 /* SmartCallingCallKit.plist */; };
@@ -70,6 +71,8 @@
 		D6948652658FD713A15354BB /* Pods_SmartCallingCallKitProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCallingCallKitProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2394E945C741E7221D12D6A /* Pods_SmartCalling_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartCalling_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABFA719334BB195F126DD62 /* Pods-SmartCalling_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartCalling_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartCalling_Example/Pods-SmartCalling_Example.release.xcconfig"; sourceTree = "<group>"; };
+		FB1C729A2107EA1D003928F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FB1C729C2107EADD003928F8 /* SmartCalling_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartCalling_Example.entitlements; sourceTree = "<group>"; };
 		FB2F4B092000328D00C680B3 /* SmartCallingCallKit.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SmartCallingCallKit.plist; sourceTree = "<group>"; };
 		FB2F4B1320003FB700C680B3 /* SmartCallingCallKitProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartCallingCallKitProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2F4B1520003FB700C680B3 /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				FB1C729C2107EADD003928F8 /* SmartCalling_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for SmartCalling */,
 				FB2F4B1420003FB700C680B3 /* SmartCallingCallKitProvider */,
@@ -134,6 +138,7 @@
 				FB9BEAF61FE35E4700670849 /* SmartCalling */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				FB1C729A2107EA1D003928F8 /* GoogleService-Info.plist */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -194,9 +199,8 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				FB3438AF1FDDEBFC0057D4F2 /* Embed Frameworks */,
-				3D778CDCAFEB3FE4C15E0079 /* [CP] Embed Pods Frameworks */,
-				E5A7C8C4F8247F5FE573C6ED /* [CP] Copy Pods Resources */,
 				FB2511571FFD9D50009650D9 /* Embed App Extensions */,
+				1B113FC8C28E273F5300AE98 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,7 +220,6 @@
 				FB2F4B0F20003FB700C680B3 /* Sources */,
 				FB2F4B1020003FB700C680B3 /* Frameworks */,
 				FB2F4B1120003FB700C680B3 /* Resources */,
-				BA1B97DD4FD463ACD367AB6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,6 +246,9 @@
 						LastSwiftMigration = 0920;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -280,6 +286,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				FB9BEAF71FE35E4700670849 /* SmartCalling in Resources */,
+				FB1C729B2107EA1D003928F8 /* GoogleService-Info.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -296,15 +303,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D778CDCAFEB3FE4C15E0079 /* [CP] Embed Pods Frameworks */ = {
+		1B113FC8C28E273F5300AE98 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartCalling_Example/Pods-SmartCalling_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -345,36 +359,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA1B97DD4FD463ACD367AB6C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartCallingCallKitProvider/Pods-SmartCallingCallKitProvider-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5A7C8C4F8247F5FE573C6ED /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartCalling_Example/Pods-SmartCalling_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -531,6 +515,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SmartCalling_Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4232L5VHS7;
 				INFOPLIST_FILE = SmartCalling/Info.plist;
@@ -551,6 +536,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SmartCalling_Example.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4232L5VHS7;
 				INFOPLIST_FILE = SmartCalling/Info.plist;

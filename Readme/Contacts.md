@@ -4,7 +4,7 @@
 
 First you need to add the profiles folder named _SmartCalling_. It should contain one or more .plist file and some images. Just drag and drop the folder into your project structure. Make sure you select "Copy items if needed", "Create folder references" and the target below.
 
-<img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/add_folder.png" width="400">
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/add_folder.png?raw=true" width="400">
 
 Sample SmartCalling folder can be found in the example project. (SmartCalling-iOS/Example/SmartCalling/SmartCalling)
 
@@ -12,7 +12,7 @@ Sample SmartCalling folder can be found in the example project. (SmartCalling-iO
 
 To add contacts to users device, the app needs permission for Contacts. You need to add a usage description in the Info.plist file for the key _NSContactsUsageDescription_ with a text value.
 
-<img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/permission.png" width="400">
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/permission.png?raw=true" width="400">
 
 The SDK will initally ask for users permission. If the user denies it, SDK will not be able to add profiles.
 For a better user experience, the app can check if the user has denied Contacts permission and present a pop-up if so. This logic should be introduced by the app developer.
@@ -34,7 +34,6 @@ If you want to use in an Objective-C class, use this import line:
 
 To actually use the SDK and import profiles on user devices, use the code below for AppDelegate.
 
-Swift:
 ```swift
 func applicationDidBecomeActive(_ application: UIApplication) {
     SmartCallingManager.shared().importProfiles { error in
@@ -46,18 +45,6 @@ func applicationDidBecomeActive(_ application: UIApplication) {
     }
 }
 ```
-Objective-C:
-```objective-c
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [SmartCallingManager.shared importProfilesFromEmbeddedPlist:^(NSError *error) {
-        if (error) {
-            NSLog(@"SmartCalling Import Profiles Failed: %@", error.localizedDescription);
-        } else {
-            NSLog(@"SmartCalling Import Profiles Succeeded");
-        }
-    }];
-}
-```
 
 In this example importProfilesFromEmbeddedPlist function is called within Application Did Become Active event. It can be used in other places but this will make sure to try again in some error cases like when no permission is given. Calling importProfilesFromEmbeddedPlist multiple times has no performance effects, becuase it'll only update the profiles when necessary. This process is asynchronous and won't block the app.
 
@@ -67,8 +54,14 @@ Online integration works just like offline one but you need to set your Api Key 
 
 Swift:
 ```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    SmartCallingManager.shared().setApiKey("XXXX-XXXX-XXXX-XXXX")	
+
+	return true
+}
+
 func applicationDidBecomeActive(_ application: UIApplication) {
-    SmartCallingManager.shared().setApiKey("XXXX-XXXX-XXXX-XXXX")
+	// Check for profile updates everytime app becomes active
     SmartCallingManager.shared().updateProfiles { error in
         if let error = error {
             print("SmartCalling Update Profiles Failed: \(error)")
@@ -78,16 +71,24 @@ func applicationDidBecomeActive(_ application: UIApplication) {
     }
 }
 ```
-Objective-C:
-```objective-c
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    [SmartCallingManager.shared setApiKey:@"XXXX-XXXX-XXXX-XXXX"];
-    [SmartCallingManager.shared importProfilesFromEmbeddedPlist:^(NSError *error) {
-        if (error) {
-            NSLog(@"SmartCalling Update Profiles Failed: %@", error.localizedDescription);
-        } else {
-            NSLog(@"SmartCalling Update Profiles Succeeded");
-        }
-    }];
+
+## 6. Enable Remote Update (Online Integration)
+
+Remote profile update works with silent push notifications. SmartCalling SDK uses Firebase Cloud Messaging product to register for push notification. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive FCM Token, subscribe to Smartcalling topic and register the token as shown below:
+
+```swift
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+    // Update profiles when silent push arrives
+    SmartCallingManager.shared().updateProfiles(nil)
+}
+
+// Firebase MessagingDelegate    
+func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    // Register to push notification
+    messaging.subscribe(toTopic: SmartCallingManager.shared().fcmTopic())
+    SmartCallingManager.shared().registerFCMToken(fcmToken, completionHandler: nil)
 }
 ```
+
+You can refer to the Example application code hosted on SmartCalling iOS SDK GitHub page.
+

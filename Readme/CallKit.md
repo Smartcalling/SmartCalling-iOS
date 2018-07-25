@@ -4,7 +4,7 @@
 
 First you need to create a new target for your project. 
 
-<img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/call_kit_extension.png" width="400">
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/call_kit_extension.png?raw=true" width="400">
 
 ## 2. CocoaPods
 
@@ -14,8 +14,8 @@ Make sure that this new target is configured for SmartCallingSDK pod. You can ch
 
 Add the profiles plist file named _SmartCallingCallKit.plist_ to the extension target folder. Make sure you select "Copy items if needed" and the extension target below.
 
-<img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/call_kit_res_1.png" width="200">
-<img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/call_kit_res_2.png" width="400">
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/call_kit_res_1.png?raw=true" width="200">
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/call_kit_res_2.png?raw=true" width="400">
 
 ## 3. Import Framework
 
@@ -58,4 +58,4 @@ Objective-C:
 
 Users will need to manually enable Call Identification to benefit from this feature. You can choose to notify users how to do this with an Alert View or a custom screen. They need to open *Settings > Phone > Call Blocking & Identification* and enable your application.
 
-<img src="https://raw.githubusercontent.com/Smartcalling/SmartCalling-iOS/master/Readme/call_kit_settings.png" width="600">
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/call_kit_settings.png?raw=true" width="600">

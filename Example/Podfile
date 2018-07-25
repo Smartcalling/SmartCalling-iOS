@@ -4,6 +4,8 @@ use_frameworks!
 target 'SmartCalling_Example' do
 
   pod 'SmartCallingSDK', :path => '../'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
 end
 

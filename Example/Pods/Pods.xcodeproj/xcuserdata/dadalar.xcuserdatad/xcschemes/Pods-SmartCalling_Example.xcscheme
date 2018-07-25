@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D6765CF4C6510194407039D9AAFA77C"
+               BlueprintIdentifier = "E9CD5BC5F39A8DC43A6F3174AAE5C7AE"
                BuildableName = "Pods_SmartCalling_Example.framework"
                BlueprintName = "Pods-SmartCalling_Example"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D6765CF4C6510194407039D9AAFA77C"
+            BlueprintIdentifier = "E9CD5BC5F39A8DC43A6F3174AAE5C7AE"
             BuildableName = "Pods_SmartCalling_Example.framework"
             BlueprintName = "Pods-SmartCalling_Example"
             ReferencedContainer = "container:Pods.xcodeproj">
