@@ -92,3 +92,7 @@ func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: Str
 
 You can refer to the Example application code hosted on SmartCalling iOS SDK GitHub page.
 
+## 7. SmartCalling Id
+We generate and use a uniqe id for each instance. You can get that Id and keep it on your storage. You can send a profile to device directly with it.
+
+    SmartCallingManager.shared().getSmartCallingId()
