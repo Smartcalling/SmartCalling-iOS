@@ -21,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Set Api Key
-        SmartCallingManager.shared().setApiKey("1dc877e9-b5b2-44d3-adbb-5347fa9f5e11")
+        SmartCallingManager.shared().setApiKey("f47678fa-4a80-4ec4-b229-77e806837870")
 
+        // If you need to get unique SmartCalling Id to identify this device and installation later
+        print("SmartCalling Id: \(SmartCallingManager.shared().getSmartCallingId()!)")
+        
         // Firebase Messaging Integration
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)

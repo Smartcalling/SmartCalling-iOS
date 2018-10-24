@@ -12,6 +12,7 @@
 
 +(instancetype)shared;
 -(void)setApiKey:(NSString*)apiKey;
+-(NSString*)getSmartCallingId;
 -(void)importProfilesFromEmbeddedPlist:(void (^)(NSError* error))completionHandler;
 -(void)updateProfiles:(void (^)(NSError* error))completionHandler;
 -(NSString *)FCMTopic;

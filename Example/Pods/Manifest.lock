@@ -32,7 +32,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.0)
-  - SmartCallingSDK (0.4.0)
+  - SmartCallingSDK (0.5.0)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -63,7 +63,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
-  SmartCallingSDK: fc49c24ae4262e4fa4b9f4ff94e95829ffb43622
+  SmartCallingSDK: 6ab093bd948091542884ab2c9ceaa7be14f92a37
 
 PODFILE CHECKSUM: 9d90931025df9c1631dbd8f5e23685170eb0c2e1
 
