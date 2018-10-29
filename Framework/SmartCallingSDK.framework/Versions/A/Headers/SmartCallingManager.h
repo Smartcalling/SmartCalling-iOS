@@ -10,6 +10,8 @@
 
 @interface SmartCallingManager : NSObject
 
+@property (nonatomic, copy) NSString *applicationName;
+
 +(instancetype)shared;
 -(void)setApiKey:(NSString*)apiKey;
 -(NSString*)getSmartCallingId;

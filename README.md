@@ -17,7 +17,7 @@ Using the SmartCalling SDK let's you add a contacts to the iOS AddressBook so us
 SmartCallingSDK is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SmartCallingSDK'
+pod 'SmartCallingSDK', :git => 'git@github.com:Smartcalling/SmartCalling-iOS.git'
 ```
 
 ### Manual Installation
