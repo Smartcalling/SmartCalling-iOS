@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set Api Key
         SmartCallingManager.shared().setApiKey("f47678fa-4a80-4ec4-b229-77e806837870")
+        
+        // Setup Background App Refresh
+        application.setMinimumBackgroundFetchInterval(3600) // every 60 mins
 
         // If you need to get unique SmartCalling Id to identify this device and installation later
         print("SmartCalling Id: \(SmartCallingManager.shared().getSmartCallingId()!)")
@@ -69,6 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         // Update profiles when silent push arrives
         SmartCallingManager.shared().updateProfiles(nil)
+    }
+    
+    // Background App Refresh
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        SmartCallingManager.shared().updateProfiles { error in
+            let result = error == nil ? UIBackgroundFetchResult.newData : UIBackgroundFetchResult.failed
+            completionHandler(result)
+        }
     }
     
 }
