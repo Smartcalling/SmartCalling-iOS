@@ -100,7 +100,7 @@ We generate and use a uniqe id for each instance. You can get that Id and keep i
 ## 8. Background App Refresh
 This native iOS feature can be used to trigger synchorization SmartCalling contacts even the application is in the background. Please first follow [this Apple Documentation](https://developer.apple.com/documentation/uikit/core_app/managing_your_app_s_life_cycle/preparing_your_app_to_run_in_the_background/updating_your_app_with_background_app_refresh) page to setup background refresh for your application. After that all you need to do is to start the SmartCalling update process as shown below:
 
-```
+```swift
 func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     SmartCallingManager.shared().updateProfiles { error in
         let result = error == nil ? UIBackgroundFetchResult.newData : UIBackgroundFetchResult.failed
