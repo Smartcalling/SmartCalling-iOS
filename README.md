@@ -1,28 +1,14 @@
-# SmartCallingSDK
+# SmartCalling Sample App
 
-[![Version](https://img.shields.io/cocoapods/v/SmartCallingSDK.svg?style=flat)](http://cocoapods.org/pods/SmartCallingSDK)
-[![Platform](https://img.shields.io/cocoapods/p/SmartCallingSDK.svg?style=flat)](http://cocoapods.org/pods/SmartCallingSDK)
-
-Using the SmartCalling SDK let's you add a contacts to the iOS AddressBook so users of your app can know when you recive a call from
-
-## Requirements
-
-- iOS 9.0+
-- Xcode 8.0+
-
-## Installation
-
-### CocoaPods
-
-SmartCallingSDK is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
-
-```ruby
-pod 'SmartCallingSDK', :git => 'git@github.com:Smartcalling/SmartCalling-iOS.git'
-```
+The SmartCalling SDK let's you add your company contact details to the iOS AddressBook.  In this way users of your app will see when they receive a call from your company.
 
 ### Manual Installation
 
-Alternatively you can download SmartCalling.framework from this repository and manually add it to your project.
+The SmartCalling.framework has been included with this repository, but you want to make changes to the SDK project you will need to update this file in `Framework/`
+
+- from terminal `pod install`
+- open generated workspace file
+- Build & Run
 
 ## Usage
 
@@ -33,4 +19,3 @@ This approach will add profile(s) on users Contacts application. An image and la
 ### 2. [Call Identification (CallKit)](Readme/CallKit.md)
 
 This approach uses Phone app's Call Identification feature. Only a label (along with your application name) will be shown for numbers.
-
