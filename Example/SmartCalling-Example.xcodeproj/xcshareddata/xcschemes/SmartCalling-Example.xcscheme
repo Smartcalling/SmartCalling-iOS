@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "SmartCalling-Cornelis.app"
+               BuildableName = "SmartCalling.app"
                BlueprintName = "SmartCalling_Example"
                ReferencedContainer = "container:SmartCalling-Example.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "SmartCalling-Cornelis.app"
+            BuildableName = "SmartCalling.app"
             BlueprintName = "SmartCalling_Example"
             ReferencedContainer = "container:SmartCalling-Example.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "SmartCalling-Cornelis.app"
+            BuildableName = "SmartCalling.app"
             BlueprintName = "SmartCalling_Example"
             ReferencedContainer = "container:SmartCalling-Example.xcodeproj">
          </BuildableReference>
@@ -78,7 +78,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "SmartCalling-Cornelis.app"
+            BuildableName = "SmartCalling.app"
             BlueprintName = "SmartCalling_Example"
             ReferencedContainer = "container:SmartCalling-Example.xcodeproj">
          </BuildableReference>

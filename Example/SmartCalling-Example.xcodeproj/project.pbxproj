@@ -20,7 +20,7 @@
 		FB2F4B1620003FB700C680B3 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2F4B1520003FB700C680B3 /* CallDirectoryHandler.swift */; };
 		FB2F4B1A20003FB700C680B3 /* SmartCallingCallKitProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB2F4B1320003FB700C680B3 /* SmartCallingCallKitProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FB2F4B1E2000401300C680B3 /* SmartCallingCallKit.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2F4B092000328D00C680B3 /* SmartCallingCallKit.plist */; };
-		FB9BEAF71FE35E4700670849 /* SmartCalling in Resources */ = {isa = PBXBuildFile; fileRef = FB9BEAF61FE35E4700670849 /* SmartCalling */; };
+		FB9BEAF71FE35E4700670849 /* Profiles in Resources */ = {isa = PBXBuildFile; fileRef = FB9BEAF61FE35E4700670849 /* Profiles */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +81,7 @@
 		FB2F4B1520003FB700C680B3 /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
 		FB2F4B1720003FB700C680B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9BEAA71FE33EA100670849 /* SmartCallingSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SmartCallingSDK.podspec; path = ../SmartCallingSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FB9BEAF61FE35E4700670849 /* SmartCalling */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SmartCalling; sourceTree = "<group>"; };
+		FB9BEAF61FE35E4700670849 /* Profiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Profiles; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,7 @@
 		607FACD21AFB9204008FA782 /* Example for SmartCalling */ = {
 			isa = PBXGroup;
 			children = (
-				FB9BEAF61FE35E4700670849 /* SmartCalling */,
+				FB9BEAF61FE35E4700670849 /* Profiles */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				FB1C729A2107EA1D003928F8 /* GoogleService-Info.plist */,
@@ -290,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				FB9BEAF71FE35E4700670849 /* SmartCalling in Resources */,
+				FB9BEAF71FE35E4700670849 /* Profiles in Resources */,
 				FB1C729B2107EA1D003928F8 /* GoogleService-Info.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -610,7 +610,7 @@
 				INFOPLIST_FILE = SmartCallingCallKitProvider/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SmartCalling-Cornelis.SmartCallingCallKitProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.demo.SmartCalling.SmartCallingCallKitProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -641,7 +641,7 @@
 				INFOPLIST_FILE = SmartCallingCallKitProvider/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.SmartCalling-Cornelis.SmartCallingCallKitProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.demo.SmartCalling.SmartCallingCallKitProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
