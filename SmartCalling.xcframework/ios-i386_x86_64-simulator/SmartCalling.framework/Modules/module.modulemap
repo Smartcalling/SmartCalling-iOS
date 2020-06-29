@@ -1,0 +1,11 @@
+framework module SmartCalling {
+  umbrella header "SmartCalling.h"
+
+  export *
+  module * { export * }
+}
+
+module SmartCalling.Swift {
+    header "SmartCalling-Swift.h"
+    requires objc
+}

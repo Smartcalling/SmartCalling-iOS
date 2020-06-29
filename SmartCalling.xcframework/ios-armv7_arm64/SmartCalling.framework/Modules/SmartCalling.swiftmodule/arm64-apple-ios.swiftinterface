@@ -1,0 +1,29 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SmartCalling
+import Contacts
+import Foundation
+import Security
+@_exported import SmartCalling
+import Swift
+import UIKit
+@_hasMissingDesignatedInitializers final public class SmartCallingManager {
+  public static var shared: SmartCalling.SmartCallingManager
+  final public var url: Foundation.URL
+  final public var apiKey: Swift.String?
+  final public var contactGroupName: Swift.String
+  final public let version: Swift.String
+  final public func updateProfiles(completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
+  final public func setClientId(_ clientId: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
+  final public func setFCMToken(_ token: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
+  @objc deinit
+}
+extension SmartCallingManager {
+  public enum Error : Swift.Error {
+    case apiKeyMissing
+    case alreadyUpdating
+    case unableToCreateContactGroup
+    case unableToFetchContacts
+    case networkError(Swift.Error)
+  }
+}
