@@ -10,7 +10,17 @@ Please refer to the [code-level documentation](Readme/SmartCallingManager.md) fo
 
 ## Installation
 
-The SmartCalling.framework has been included in this repository. You can drag and drop the file directly to your Xcode project. Make sure that it is visible in your project settings as Embed & Sign.
+### Cocoapods
+
+SmartCallingSDK is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+`pod 'SmartCallingSDK'`
+
+Make sure you run `pod install` from command line. Note that this technique requires Cocoapods 1.9 and above. 
+
+### Manual Installation
+
+The SmartCalling.xcframework has been included in this repository. You can drag and drop the file directly to your Xcode project. Make sure that it is visible in your project settings as Embed & Sign.
 
 ## Project Setup
 
