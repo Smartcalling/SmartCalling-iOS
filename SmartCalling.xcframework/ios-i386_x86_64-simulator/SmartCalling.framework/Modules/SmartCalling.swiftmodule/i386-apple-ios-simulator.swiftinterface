@@ -16,6 +16,7 @@ import UIKit
   final public func updateProfiles(completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
   final public func setClientId(_ clientId: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
   final public func setFCMToken(_ token: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
+  final public func processRemoteNotification(userInfo: [Swift.AnyHashable : Any], completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ()) -> Swift.Bool
   @objc deinit
 }
 extension SmartCallingManager {

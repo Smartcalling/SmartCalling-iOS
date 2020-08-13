@@ -62,9 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
   // Receive push notification
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    SmartCallingManager.shared.updateProfiles { error in
+    let isSmartCallingNotification = SmartCallingManager.shared.processRemoteNotification(userInfo: userInfo) { error in
       let result: UIBackgroundFetchResult = error == nil ? .newData : .failed
       completionHandler(result)
+    }
+
+    if !isSmartCallingNotification { // Not a SmartCalling notification, check for potential other types.
+      completionHandler(.failed)
     }
   }
 
