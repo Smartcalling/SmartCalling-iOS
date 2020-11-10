@@ -1,6 +1,6 @@
 # Types
 
-  - [SmartCallingCallDirectoryHandler](/SmartCallingCallDirectoryHandler)
-  - [SmartCallingManager](/SmartCallingManager)
-  - [SmartCallingManager.Error](/SmartCallingManager_Error):
+  - [SmartCallingCallDirectoryHandler](SmartCallingCallDirectoryHandler.md)
+  - [SmartCallingManager](SmartCallingManager.md)
+  - [SmartCallingManager.Error](SmartCallingManager_Error.md):
     Possible error cases returned when using SmartCalling SDK.
