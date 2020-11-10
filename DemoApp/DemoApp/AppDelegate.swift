@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
 
   // Send FCM Token to SmartCalling servers
-  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
     messaging.subscribe(toTopic: "campaign")
     SmartCallingManager.shared.setFCMToken(fcmToken) { error in
       if let error = error {

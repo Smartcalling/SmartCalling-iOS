@@ -6,7 +6,7 @@ Please report any bugs/issues/suggestions to cj@smartcalling.co.uk
 
 ## Code-Level Documentation
 
-Please refer to the [code-level documentation](Readme/SmartCallingManager.md) for further information. 
+Please refer to the [code-level documentation](Readme/docs/Home.md) for further information. 
 
 ## Installation
 
@@ -76,8 +76,6 @@ The SDK will automatically update profiles for the given client ID, so no need t
 
 ## Enable Remote Update
 
-## Enable Remote Update
-
 Remote profile update works with silent push notifications. SmartCalling SDK uses Firebase Cloud Messaging product to register for push notification. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive FCM Token, subscribe to Smartcalling topic and register the token and direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
 
 ```swift
@@ -114,6 +112,33 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
   SmartCallingManager.shared.updateProfiles { error in
     let result: UIBackgroundFetchResult = error == nil ? .newData : .failed
     completionHandler(result)
+  }
+}
+```
+## Anti-Vishing (with CallKit extension)
+
+In order to activate SmartCalling Anti-Vishing feature, you first need to create a Call Directory Extension.
+
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/callkit.png?raw=true" width="400">
+
+If you are using Cocoapods to install the SDK, please make sure the SmartCallingSDK pod is added for the new extension target. If you're manually installing the framework, make sure that it is visible in your project settings as Do Not Embed (not Embed & Sign).
+
+Open CallDirectoryHandler.swift file and import SmartCalling. Mark the class as a subclass of `SmartCallingCallDirectoryHandler` to inherit all required behaviour. You'll need to override `apiKey` (and `url` if you are using a custom SmartCalling backend). The final file should look like this: 
+
+```swift
+import Foundation
+import SmartCalling
+
+class CallDirectoryHandler: SmartCallingCallDirectoryHandler {
+//  // Uncomment this line if you are using a custom SmartCalling server
+//  override var url: URL {
+//    get { URL(string: "https://portal.smartcom.net")! }
+//    set {}
+//  }
+
+  override var apiKey: String? {
+    get { "XXXXXX-XXXX-XXXX-XXXX-XXXXXX" }
+    set {}
   }
 }
 ```
