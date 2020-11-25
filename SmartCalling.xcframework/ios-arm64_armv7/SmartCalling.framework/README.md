@@ -6,7 +6,7 @@ Please report any bugs/issues/suggestions to cj@smartcalling.co.uk
 
 ## Code-Level Documentation
 
-Please refer to the [code-level documentation](Readme/SmartCallingManager.md) for further information. 
+Please refer to the [code-level documentation](Readme/docs/Home.md) for further information. 
 
 ## Installation
 
@@ -102,6 +102,34 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
   SmartCallingManager.shared.updateProfiles { error in
     let result: UIBackgroundFetchResult = error == nil ? .newData : .failed
     completionHandler(result)
+  }
+}
+```
+
+## Anti-Vishing (with CallKit extension)
+
+In order to activate SmartCalling Anti-Vishing feature, you first need to create a Call Directory Extension.
+
+<img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/callkit.png?raw=true" width="400">
+
+If you are using Cocoapods to install the SDK, please make sure the SmartCallingSDK pod is added for the new extension target. If you're manually installing the framework, make sure that it is visible in your project settings as Do Not Embed (not Embed & Sign).
+
+Open CallDirectoryHandler.swift file and import SmartCalling. Mark the class as a subclass of `SmartCallingCallDirectoryHandler` to inherit all required behaviour. You'll need to override `apiKey` (and `url` if you are using a custom SmartCalling backend). The final file should look like this: 
+
+```swift
+import Foundation
+import SmartCalling
+
+class CallDirectoryHandler: SmartCallingCallDirectoryHandler {
+//  // Uncomment this line if you are using a custom SmartCalling server
+//  override var url: URL {
+//    get { URL(string: "https://portal.smartcom.net")! }
+//    set {}
+//  }
+
+  override var apiKey: String? {
+    get { "XXXXXX-XXXX-XXXX-XXXX-XXXXXX" }
+    set {}
   }
 }
 ```
