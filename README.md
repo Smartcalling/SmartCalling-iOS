@@ -28,7 +28,7 @@ To add contacts to users device, the app needs permission for accessing Contacts
 
 <img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/permission.png?raw=true" width="400">
 
-The SDK will initally ask for users permission. If the user denies it, SDK will not be able to add profiles and return an error. For a better user experience, the app can check if the user has denied Contacts permission and present a pop-up if so. This logic should be introduced by the app developer.
+The SDK will initally ask for users permission. If the user denies it, the SDK will not be able to add profiles and return an error. For a better user experience, the app can check if the user has denied Contacts permission and present a pop-up if so. This logic should be introduced by the app developer.
 
 ## Usage
 
@@ -76,7 +76,7 @@ The SDK will automatically update profiles for the given client ID, so no need t
 
 ## Enable Remote Update
 
-Remote profile update works with silent push notifications. SmartCalling SDK uses Firebase Cloud Messaging product to register for push notification. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive FCM Token, subscribe to Smartcalling topics and register the token and direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
+Remote profile update works with silent push notifications. SmartCalling SDK uses Firebase Cloud Messaging to register for push notification. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive the FCM Token, subscribe to Smartcalling topics and register the token then direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
 
 ```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -106,7 +106,7 @@ You can refer to the Example application code hosted on SmartCalling iOS SDK Git
 
 ## Background App Refresh
 
-This native iOS feature can be used to trigger synchorization SmartCalling contacts even the application is in the background. Please first follow [this Apple Documentation](https://developer.apple.com/documentation/uikit/core_app/managing_your_app_s_life_cycle/preparing_your_app_to_run_in_the_background/updating_your_app_with_background_app_refresh) page to setup background refresh for your application. After that all you need to do is to start the SmartCalling update process as shown below:
+This native iOS feature can be used to trigger synchronization of SmartCalling contacts even if the application is in the background. Please first follow [this Apple Documentation](https://developer.apple.com/documentation/uikit/core_app/managing_your_app_s_life_cycle/preparing_your_app_to_run_in_the_background/updating_your_app_with_background_app_refresh) page to setup background refresh for your application. After that all you need to do is to start the SmartCalling update process as shown below:
 
 ```swift
 func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
