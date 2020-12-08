@@ -76,7 +76,7 @@ The SDK will automatically update profiles for the given client ID, so no need t
 
 ## Enable Remote Update
 
-Remote profile update works with silent push notifications. SmartCalling SDK uses Firebase Cloud Messaging product to register for push notification. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive FCM Token, subscribe to Smartcalling topic and register the token and direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
+Remote profile update works with silent push notifications. SmartCalling SDK uses Firebase Cloud Messaging product to register for push notification. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive FCM Token, subscribe to Smartcalling topics and register the token and direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
 
 ```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -94,7 +94,8 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 // Firebase MessagingDelegate    
 func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
   // Register to push notification
-  messaging.subscribe(toTopic: "campaign")
+  messaging.subscribe(toTopic: "smartcallingcampaign")
+  messaging.subscribe(toTopic: "smblacklistupdate")
   SmartCallingManager.shared.setFCMToken(fcmToken) { error in
     // Some additional logic for error case
   }
