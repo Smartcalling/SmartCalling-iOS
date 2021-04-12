@@ -1,6 +1,6 @@
-# SmartCalling iOS SDK
+# SmartCalling iOS Library
 
-The SmartCalling SDK let's you add your company contact details to the iOS AddressBook. In this way users of your app will see a personalised screen when they receive a call from your company.
+The SmartCalling library let's you add your company contact details to the iOS AddressBook. In this way users of your app will see a personalised screen when they receive a call from your company.
 
 If you plan to use the SmartCalling Demo app for reference please remember to use your command line app to run `pod install` while in the demo app project folder after you have downloaded the code.
 
@@ -31,7 +31,7 @@ To add contacts to users device, the app needs permission for accessing Contacts
 
 <img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/permission.png?raw=true" width="400">
 
-The SDK will initally ask for users permission. If the user denies it, the SDK will not be able to add profiles and return an error. For a better user experience, the app can check if the user has denied Contacts permission and present a pop-up if so. This logic should be introduced by the app developer.
+The library will initally ask for users permission. If the user denies it, the library will not be able to add profiles and return an error. For a better user experience, the app can check if the user has denied Contacts permission and present a pop-up if so. This logic should be introduced by the app developer.
 
 ## Usage
 
@@ -40,7 +40,7 @@ The SDK will initally ask for users permission. If the user denies it, the SDK w
 import SmartCalling
 ```
 
-2. If you haven't already, you will need to add your app to the SmartCom portal. Once this is done, you will be provided with an API Key. Before using any other functions of the SDK, the API Key needs to be set. The SDK uses general SmartCalling servers (https://portal.smartcom.net) by default. If you need to use a custom server, just override the value as shown below:
+2. If you haven't already, you will need to add your app to the SmartCom portal. Once this is done, you will be provided with an API Key. Before using any other functions of the library, the API Key needs to be set. The library uses general SmartCalling servers (https://portal.smartcom.net) by default. If you need to use a custom server, just override the value as shown below:
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   SmartCallingManager.shared.apiKey = "XXXX-XXXX-XXXX-XXXX"
@@ -50,7 +50,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-3. Everytime you call SDK's updateProfiles function, all the contacts will be updated if there is a change in your remote configuration. For example 'applicationDidBecomeActive' might be a good place to update profiles. If you are using a Scene Delegate you will need to add this code to your 'sceneDidBecomeActive' function instead.
+3. Everytime you call library's updateProfiles function, all the contacts will be updated if there is a change in your remote configuration. For example 'applicationDidBecomeActive' might be a good place to update profiles. If you are using a Scene Delegate you will need to add this code to your 'sceneDidBecomeActive' function instead.
 ```swift
 func applicationDidBecomeActive(_ application: UIApplication) {
   // Check for profile updates everytime app becomes active
@@ -63,7 +63,7 @@ func applicationDidBecomeActive(_ application: UIApplication) {
   }
 }
 ```
-4. An assumption is made that your app will have a login process that results in the app receiving user information. For the SDK to work completely, your login process must return a unique ID for the user logged in. This unique ID must be passed to the SDK using the following code (where XXX is the unique user ID):
+4. An assumption is made that your app will have a login process that results in the app receiving user information. For the library to work completely, your login process must return a unique ID for the user logged in. This unique ID must be passed to the library using the following code (where XXX is the unique user ID):
 ```swift
 func loginSucessful(_ userInfo: UserInfo) { // Hypothetical function defined in the app which is called after a successful login.  
   SmartCallingManager.shared.setClienId("XXX") { error in
@@ -75,11 +75,11 @@ func loginSucessful(_ userInfo: UserInfo) { // Hypothetical function defined in 
   }
 }
 ```
-The SDK will automatically update profiles for the given client ID, so no need to call updateProfiles separately.
+The library will automatically update profiles for the given client ID, so no need to call updateProfiles separately.
 
 ## Enable Remote Update
 
-Remote profile update works with silent push notifications. The SmartCalling Demo uses Firebase Cloud Messaging to register for push notification. While the demo solution uses FCM as its push solution you are in no way limited to Google Firebase to manage your push notifications. If you are using, or are plannng to use, a different system then please let us know and we will make sure your solution is supported. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive the FCM Token, subscribe to Smartcalling topics and register the token then direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
+Remote profile update works with silent push notifications. The SmartCalling Demo uses Firebase Cloud Messaging to register for push notification. While the demo solution uses FCM as its push solution you are in no way limited to Google Firebase to manage your push notifications. If you are using, or are planning to use, a different system then please let us know and we will make sure your solution is supported. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive the FCM Token, subscribe to Smartcalling topics and register the token then direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
 
 ```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -105,7 +105,7 @@ func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: Str
 }
 ```
 
-You can refer to the Example application code hosted on SmartCalling iOS SDK GitHub page.
+You can refer to the Example application code hosted on SmartCalling iOS Library GitHub page.
 
 ## Background App Refresh
 
@@ -125,7 +125,7 @@ In order to activate SmartCalling Anti-Vishing feature, you first need to create
 
 <img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/callkit.png?raw=true" width="400">
 
-If you are using Cocoapods to install the SDK, please make sure the SmartCallingSDK pod is added for the new extension target. If you're manually installing the framework, make sure that it is visible in your project settings as Do Not Embed (not Embed & Sign).
+If you are using Cocoapods to install the library, please make sure the SmartCallingSDK pod is added for the new extension target. If you're manually installing the framework, make sure that it is visible in your project settings as Do Not Embed (not Embed & Sign).
 
 Open CallDirectoryHandler.swift file and import SmartCalling. Mark the class as a subclass of `SmartCallingCallDirectoryHandler` to inherit all required behaviour. You'll need to override `apiKey` (and `url` if you are using a custom SmartCalling backend). The final file should look like this: 
 
