@@ -48,7 +48,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-3. Everytime you call SDK's updateProfiles function, all the contacts will be updated if there is a change in your remote configuration. For example applicationDidBecomeActive might be a good place to update profiles.
+3. Everytime you call SDK's updateProfiles function, all the contacts will be updated if there is a change in your remote configuration. For example 'applicationDidBecomeActive' might be a good place to update profiles. If you are using a Scene Delegate you will need to add this code to your 'sceneDidBecomeActive' function instead.
 ```swift
 func applicationDidBecomeActive(_ application: UIApplication) {
   // Check for profile updates everytime app becomes active
