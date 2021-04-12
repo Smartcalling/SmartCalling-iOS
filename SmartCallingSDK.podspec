@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.version          = '1.3.0'
   s.summary          = 'Use this library to add SmartCalling functionality to your iOS application.'
   s.description      = <<-DESC
-    Using the SmartCalling SDK let's you add a contact to the iOS AddressBook so users of your app can know when you recive a call from
+    Using the SmartCalling SDK let's you add a contact to the iOS AddressBook so users of your app can know when they receive a call from a valid call center number
                        DESC
   s.homepage         = 'https://github.com/Smartcalling/SmartCalling-iOS'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
