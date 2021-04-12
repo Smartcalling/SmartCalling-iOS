@@ -2,6 +2,8 @@
 
 The SmartCalling SDK let's you add your company contact details to the iOS AddressBook. In this way users of your app will see a personalised screen when they receive a call from your company.
 
+If you plan to use the SmartCalling Demo app for reference please remember to use your command line app to run `pod install` while in the demo app project folder after you have downloaded the code.
+
 Please report any bugs/issues/suggestions to cj@smartcalling.co.uk
 
 ## Code-Level Documentation
@@ -77,7 +79,7 @@ The SDK will automatically update profiles for the given client ID, so no need t
 
 ## Enable Remote Update
 
-Remote profile update works with silent push notifications. SmartCalling SDK uses Firebase Cloud Messaging to register for push notification. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive the FCM Token, subscribe to Smartcalling topics and register the token then direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
+Remote profile update works with silent push notifications. The SmartCalling Demo uses Firebase Cloud Messaging to register for push notification. While the demo solution uses FCM as it's push solution you are in no way limited to Google Firebase to manage your push notifications. If you are using, or are plannng to use, a different system then please let us know and we will make sure your solution is supported. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive the FCM Token, subscribe to Smartcalling topics and register the token then direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
 
 ```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
