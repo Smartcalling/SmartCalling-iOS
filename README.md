@@ -11,7 +11,7 @@ Please report any bugs/issues/suggestions to cj@smartcalling.co.uk
 Please refer to the [code-level documentation](Readme/docs/Home.md) for further information. 
 
 ## Installation
-This library requires IOS version 12 as a minimum.
+This library requires IOS version 10 as a minimum.
 
 ### Cocoapods
 
