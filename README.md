@@ -11,7 +11,7 @@ Please report any bugs/issues/suggestions to cj@smartcalling.co.uk
 Please refer to the [code-level documentation](Readme/docs/Home.md) for further information. 
 
 ## Installation
-This library requires IOS version 10 as a minimum.
+This library requires IOS version 12 as a minimum.
 
 ### Cocoapods
 
@@ -76,6 +76,37 @@ func loginSucessful(_ userInfo: UserInfo) { // Hypothetical function defined in 
 }
 ```
 The library will automatically update profiles for the given client ID, so no need to call updateProfiles separately.
+
+5. If your app has a logout process, please add code to call the logOut function in the library:
+```swift
+func logOut() { // Hypothetical function defined in the app which is called when user log out of your app.  
+  SmartCallingManager.shared.logOut();
+}
+```
+
+
+
+## SSL Pinning
+
+By default the library includes SSL pinning for all SmartCalling certificates however, if you are hosting the SmartCalling API in your own environment you will have to provide information concerning where the library can download your certificate. To do this you will first need to place your certificate .der file in a location accessible to the library via a URL. To download your certificate you can run this function on your command line:
+```
+openssl s_client -connect <yourURL>:443 -showcerts < /dev/null | openssl x509 -outform DER > <yourFileName>.der
+```
+Please replace ```<yourURL>``` with the URL to the HTTPS location of your API instance and replace ```<yourFileName>``` with the name you want to give your certificate file. Once downloaded, place your certificate file in a location accessible via a URL.
+
+Once this is done, you will need to provide the library with the certificate information before you make any other calls to the library. To set the certificate location and file name you will need to call the 'setCertificateLocation' function:
+```
+SmartCallingManager.shared.setCertificateLocation(url: "https://www.myurl.com/", fileName: "myCertificate.der") { (success: Bool) in
+  if (success) {
+    ...
+  }
+};
+
+```
+
+Replace the URL and FileName parameters with your certificate URL and file name. Please note the url does not contain the .der file simply the location of the file.
+You should only make subsequent calls to the SmartCalling library if this function returns a true result in the completion handler.
+
 
 ## Enable Remote Update
 
