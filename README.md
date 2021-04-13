@@ -79,7 +79,7 @@ The library will automatically update profiles for the given client ID, so no ne
 
 5. If your app has a logout process, please add code to call the logOut function in the library:
 ```swift
-func logOut() { // Hypothetical function defined in the app which is called when user log out of your app.  
+func logOut() { // Hypothetical function defined in the app which is called when user logs out of your app.  
   SmartCallingManager.shared.logOut();
 }
 ```
