@@ -210,6 +210,10 @@ If you require support for your SmartCom integration please first request a supp
 <br/>
 <br/>
 <br/>
-**Q1. Is Client Ready or Are Clients Ready API calls returning True after Push Campaign cancelled**<br/>
+**Q1. What size and format should my campaign images be?**<br/>
+For IOS we recommend a square image (1:1) ideally 200 * 200 pixels in size. For Android we recommend a ratio of 4:3 with a recommended size of 480 * 360 pixels.
+		
+**Q2. Is Client Ready or Are Clients Ready API calls returning True after Push Campaign cancelled**<br/>
 It is possible for a true response if the device in question has been turned off or is not able to receive push notifications.<br/>
 Consider this scenario: Phone A and phone B are both switched on. A push campaign is sent to both phones, each phone receives the push and sets the device up ready to receive a call. A call to 'Is Client Ready' for each device returns true. Phone B is then switched off or moves into an area with no signal. The client sends a 'Cancel Push Campaign' to each device. Because only phone A is able to receive the push, only phone A removes the campaign. Phone B has no signal or is switched off so does not receive the push and is therefor still set up to receive the campaign call. When an 'Is Client Ready' call is now made for each phone, phone A returns false but phone B still returns true because it has not received the cancel push.
+
