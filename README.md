@@ -62,10 +62,12 @@ import SmartCalling
 ```
 
 2. If you haven't already, you will need to add your app to the SmartCom portal (see above). Once this is done, you will be provided with an API Key. Before using any other functions of the library, the API Key needs to be set.<br/>
+The SDK will set an email address to the contacts it creates which should be unique to your application. The SDK will run queries for that email and it is important that you set a unique corportateEmail when you initialize SmartCallingManager.<br/>
 The library uses the SmartCalling servers by default. If you do not intend to use your own server then you must use our UAT server for testing (https://portal-uat.smartcom.net/). Once you are ready to go live you will need to contact SmartCom to enable your organisation on the live server, you will then be provided with our live server address.<br/>If you are using your own server, just override the value as shown below:
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   SmartCallingManager.shared.apiKey = "XXXX-XXXX-XXXX-XXXX"
+  SmartCallingManager.shared.corporateEmail = "info@company.com"
   SmartCallingManager.shared.url = URL(string: "https://YOUR_SERVER_ADDRESS")!
 
   return true
@@ -105,8 +107,6 @@ func logOut() { // Hypothetical function defined in the app which is called when
   SmartCallingManager.shared.logOut();
 }
 ```
-
-
 
 ## SSL Pinning
 
@@ -203,6 +203,10 @@ class CallDirectoryHandler: SmartCallingCallDirectoryHandler {
   }
 }
 ```
+
+## Debugging
+
+You can enable debug logs with `SmartCallingManager.shared.setDebugLoggingEnabled(true)` and then the SDK will print additional logs to console for diagnostics. 
 
 ## Support & FAQ
 

@@ -13,8 +13,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "SmartCalling",
-      url: "https://github.com/Smartcalling/SmartCalling-iOS/releases/download/1.5.1/SmartCalling.zip",
-      checksum: "cd93b0c0940ae29be1de48683e9680e58e79f377a17a0b369bd18999c04a5673"
+      url: "https://github.com/Smartcalling/SmartCalling-iOS/releases/download/1.6.0/SmartCalling.zip",
+      checksum: "6b07b3c2678a641d934f8788cbb8227580b55783c81e38bc128c9e7f2fd1d8cb"
     )
   ]
 )

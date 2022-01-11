@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SmartCalling-Swift.h</key>
 		<data>
-		6FUX3oVHCv8/GRo5pCWQ2AbUenk=
+		LnrK0OBlcigqZZ8i+509Rx+ETGs=
 		</data>
 		<key>Headers/SmartCalling.h</key>
 		<data>
@@ -14,55 +14,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VlWPV76FfgwMU4pbUtX6ray48tA=
+		+npwo9+jqKxNObakfZQqf/EaiPI=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		VDcAah4sekMbHaGIxc9NDeExtyg=
+		Gnm2dSL//8UCUTpBmCIO24DVcyA=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		9IgNZDLigivqkVXwXl3VTa7QKRo=
+		jB4R8+64MTJKMNNAMbZCHdnsEfU=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		x1A3be4RCUHMMssiZQ/k3e62hnQ=
+		ajciw/cztqwLlpsMOfQ/NyWyhQ4=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		VDcAah4sekMbHaGIxc9NDeExtyg=
+		Gnm2dSL//8UCUTpBmCIO24DVcyA=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		9IgNZDLigivqkVXwXl3VTa7QKRo=
+		jB4R8+64MTJKMNNAMbZCHdnsEfU=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		x1A3be4RCUHMMssiZQ/k3e62hnQ=
+		ajciw/cztqwLlpsMOfQ/NyWyhQ4=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		IN3Q+86p8bStrAYabKpJjejMY2k=
+		3uOtS7RUGI7lBAxsjNU5bdi/4ws=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		ZF7xpDdPWHwtGFm2ZpXwr4navY0=
+		jB0Pcz4Im35X5dSfcQslr+tvLc8=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		m7J2wvMiP+aZDxiQz+SAclgUK9Y=
+		jJ7uEgX6ZlhFgUU5VIdXkfYUL0s=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		IN3Q+86p8bStrAYabKpJjejMY2k=
+		3uOtS7RUGI7lBAxsjNU5bdi/4ws=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		ZF7xpDdPWHwtGFm2ZpXwr4navY0=
+		jB0Pcz4Im35X5dSfcQslr+tvLc8=
 		</data>
 		<key>Modules/SmartCalling.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		m7J2wvMiP+aZDxiQz+SAclgUK9Y=
+		jJ7uEgX6ZlhFgUU5VIdXkfYUL0s=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,15 +70,15 @@
 		</data>
 		<key>README.md</key>
 		<data>
-		DRrsRAEGrmo398R5DbAa+pgB47k=
+		chwKLGOZobmcYwC9pLuWzlRfAaI=
 		</data>
 		<key>scportal-prod.der</key>
 		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		FLs2AiuIYlpyICIdPv9cGP8nj24=
 		</data>
 		<key>scportal-uat.der</key>
 		<data>
-		c3xFPRgon+eN9fDNCs2e0YZ5DS4=
+		swUTe6h6tfzQz5+IfoZygfpkvbE=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -87,7 +87,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AlxV2SMRb8CB0+KNJdE0rOmfPMj2/QQvtJZ3BWt71tY=
+			I8qigMCxNYfBLlEdM5V+EZqrmxumy8nN/57oUwvnvZY=
 			</data>
 		</dict>
 		<key>Headers/SmartCalling.h</key>
@@ -101,84 +101,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EkztlE4yModcSxiUEPEC+UMVBt5a5vGnNeH93Bil6RI=
+			Oee5V6EgGs4Fb9BFirgS1Z70SD1FHtknerld93i7CPQ=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vYVdbs3LXRDpHf4CITJA31I3HEawdPtWtA5G4kTqJFs=
+			/DK34d1QM5yyw+PrV6z+ummjHsuV7Oshy9Nfk0cUhpQ=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WXmRy5hze+WPGZiU0VPi9kHKuDrhXsrGmQPMpSiJuyM=
+			mtRrs3xob/hSgAyPVw95JblAOS0wmwj+AfTklNsKZZw=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EkztlE4yModcSxiUEPEC+UMVBt5a5vGnNeH93Bil6RI=
+			Oee5V6EgGs4Fb9BFirgS1Z70SD1FHtknerld93i7CPQ=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vYVdbs3LXRDpHf4CITJA31I3HEawdPtWtA5G4kTqJFs=
+			/DK34d1QM5yyw+PrV6z+ummjHsuV7Oshy9Nfk0cUhpQ=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WXmRy5hze+WPGZiU0VPi9kHKuDrhXsrGmQPMpSiJuyM=
+			mtRrs3xob/hSgAyPVw95JblAOS0wmwj+AfTklNsKZZw=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QohqRKvKW/lXqiYeC04gmdKyPdJ4oXbRSXQxj48emdo=
+			tCODG3iQi3oPOe5QJ6RBIzQ8JyUAGCfn0nYdttROMuc=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bWbwVUiXuEzN7peSTv4qF0Te063SZmzd0AJ9ce3kYnA=
+			3ucqWAs8+pYa8JwagvK4CA6FY+PR44ywILWrxnzq+8Q=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CL0Kt4+l8iY1q8sqhNlFaVG+7io7I0gCJQMzEZIkNuw=
+			H07vmQod42smGV23oj+mKcaSuav+EpjFJGjydAVdQkk=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QohqRKvKW/lXqiYeC04gmdKyPdJ4oXbRSXQxj48emdo=
+			tCODG3iQi3oPOe5QJ6RBIzQ8JyUAGCfn0nYdttROMuc=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bWbwVUiXuEzN7peSTv4qF0Te063SZmzd0AJ9ce3kYnA=
+			3ucqWAs8+pYa8JwagvK4CA6FY+PR44ywILWrxnzq+8Q=
 			</data>
 		</dict>
 		<key>Modules/SmartCalling.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CL0Kt4+l8iY1q8sqhNlFaVG+7io7I0gCJQMzEZIkNuw=
+			H07vmQod42smGV23oj+mKcaSuav+EpjFJGjydAVdQkk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -192,21 +192,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wQfPpxp6Cjq1boSZ6Io2gQ8QZ59vjO0WBHdjTocyVg8=
+			harOyNQakHi6SGK9T99BTEI7eV0smEZAvxiyn7Gb52g=
 			</data>
 		</dict>
 		<key>scportal-prod.der</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
+			JnecLAiA6Sh/D+y4O4FKDG5al649mjc7DsOJqn/GGlk=
 			</data>
 		</dict>
 		<key>scportal-uat.der</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q6YAyO1XSGScTYjnKuUuMI4FtVir/wMduedZO7jZsF4=
+			4uHy2cD4fh9AUcyzr+lf9kuzXr7WJR4m7leG52rF6gM=
 			</data>
 		</dict>
 	</dict>

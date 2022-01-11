@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target x86_64-apple-ios12.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SmartCalling
 import CallKit
 import Contacts
@@ -8,23 +8,25 @@ import Security
 @_exported import SmartCalling
 import Swift
 import UIKit
+import _Concurrency
 @_hasMissingDesignatedInitializers final public class SmartCallingManager {
   public static var shared: SmartCalling.SmartCallingManager
   final public var url: Foundation.URL
   final public var apiKey: Swift.String?
-  final public var contactGroupName: Swift.String
+  final public var corporateEmail: Swift.String
   final public let version: Swift.String
-  final public func setCertificateLocation(url: Swift.String?, fileName: Swift.String?, completionHandler: @escaping (Swift.Bool) -> ())
+  final public func setCertificateLocation(url: Swift.String?, fileName: Swift.String?, completionHandler: @escaping (Swift.Bool) -> Swift.Void)
   final public func getCertificateName() -> Swift.String?
-  final public func updateProfiles(completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
-  final public func registerDevice(completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
-  final public func setClientId(_ clientId: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
-  final public func setFCMToken(_ token: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ())
-  final public func processRemoteNotification(userInfo: [Swift.AnyHashable : Any], completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> ()) -> Swift.Bool
+  final public func updateProfiles(completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> Swift.Void)
+  final public func registerDevice(completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> Swift.Void)
+  final public func setClientId(_ clientId: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> Swift.Void)
+  final public func setFCMToken(_ token: Swift.String?, completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> Swift.Void)
+  final public func processRemoteNotification(userInfo: [Swift.AnyHashable : Any], completionHandler: @escaping (SmartCalling.SmartCallingManager.Error?) -> Swift.Void) -> Swift.Bool
   final public func logOut()
+  final public func setDebugLoggingEnabled(_ loggingEnabled: Swift.Bool)
   @objc deinit
 }
-extension SmartCallingManager {
+extension SmartCalling.SmartCallingManager {
   public enum Error : Swift.Error {
     case apiKeyMissing
     case alreadyUpdating
@@ -38,9 +40,9 @@ extension SmartCallingManager {
   open var url: Foundation.URL
   open var apiKey: Swift.String?
   @objc override dynamic open func beginRequest(with context: CallKit.CXCallDirectoryExtensionContext)
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
-extension SmartCallingCallDirectoryHandler : CallKit.CXCallDirectoryExtensionContextDelegate {
+extension SmartCalling.SmartCallingCallDirectoryHandler : CallKit.CXCallDirectoryExtensionContextDelegate {
   @objc dynamic open func requestFailed(for extensionContext: CallKit.CXCallDirectoryExtensionContext, withError error: Swift.Error)
 }

@@ -1,3 +1,4 @@
+
 # SmartCalling iOS Library
 
 The SmartCalling library let's you add your company contact details to the iOS AddressBook. In this way users of your app will see a personalised screen when they receive a call from your company.
@@ -6,11 +7,31 @@ If you plan to use the SmartCalling Demo app for reference please remember to us
 
 Please report any bugs/issues/suggestions to cj@smartcalling.co.uk
 
-## Code-Level Documentation
+## Pre-Requisites
 
-Please refer to the [code-level documentation](Readme/docs/Home.md) for further information. 
+First you must setup an Account, an App and a Campaign in the portal. The UAT portal address is: https://portal-uat.smartcom.net/
+
+The next step is to add an app into the portal. If you do not already have an app you will need to create your own test app. Once you have an app, you will need to log into the portal and use the Add App button. Make sure you provide all the required details correctly, especially the bundle name. For the IOS package name just enter any value if you do not have an IOS app. The library works much better if you can include the FireBase Push Messaging details so you may need to create a Firebase account for your test app. To find your FCM Key and Sender ID, login to your Firebase account, select your app and then press the Settings button next to the Project Overview label. Then select Cloud Messaging and you will see your Server Key and Sender Id there. If you do not have a server key you will need to add one.
+
+Once the app has been created in the portal, you can then go to the Account section in the portal (Menu - Account) to see and copy your API Key. You will need this key when integrating the library into your app.
+
+You are now ready to follow the instructions below. Simply follow the instructions to reference the library in your app and provide the library with the details it requires. One important part is the ClientId, your app must provide a unique ClientId in your app for each device/user and you must use these clientIds when creating Campaigns.
+
+## Emulators
+
+While you can test the SmartCalling library in an emulator we have noticed some occasional spurious results when testing campaigns and anti-vishing. For that reason, we strongly recommend you test the SmartCalling libraries on physical devices for best results.
+
+## Permissions
+
+The IOS library requires two permissions<br/>
+- **Contact Permissions**<br/>
+  SmartCalling primarily needs contacts permission in order to function because the SDK adds to and removes from the users address book.
+
+- **Push Notification Permission**<br/>
+  The push campaigns feature additionally needs push notification permission and the contacts are managed on the client side triggered by a silent push notification.
 
 ## Installation
+
 This library requires IOS version 12 as a minimum.
 
 ### Cocoapods
@@ -31,7 +52,7 @@ To add contacts to users device, the app needs permission for accessing Contacts
 
 <img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/permission.png?raw=true" width="400">
 
-The library will initally ask for users permission. If the user denies it, the library will not be able to add profiles and return an error. For a better user experience, the app can check if the user has denied Contacts permission and present a pop-up if so. This logic should be introduced by the app developer.
+The library will initally ask for user's permission. If the user denies it, the library will not be able to add profiles and return an error. For a better user experience, the app can check if the user has denied Contacts permission and present a pop-up if so. This logic should be introduced by the app developer.
 
 ## Usage
 
@@ -40,11 +61,14 @@ The library will initally ask for users permission. If the user denies it, the l
 import SmartCalling
 ```
 
-2. If you haven't already, you will need to add your app to the SmartCom portal. Once this is done, you will be provided with an API Key. Before using any other functions of the library, the API Key needs to be set. The library uses general SmartCalling servers (https://portal.smartcom.net) by default. If you need to use a custom server, just override the value as shown below:
+2. If you haven't already, you will need to add your app to the SmartCom portal (see above). Once this is done, you will be provided with an API Key. Before using any other functions of the library, the API Key needs to be set.<br/>
+The SDK will set an email address to the contacts it creates which should be unique to your application. The SDK will run queries for that email and it is important that you set a unique corportateEmail when you initialize SmartCallingManager.<br/>
+The library uses the SmartCalling servers by default. If you do not intend to use your own server then you must use our UAT server for testing (https://portal-uat.smartcom.net/). Once you are ready to go live you will need to contact SmartCom to enable your organisation on the live server, you will then be provided with our live server address.<br/>If you are using your own server, just override the value as shown below:
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
   SmartCallingManager.shared.apiKey = "XXXX-XXXX-XXXX-XXXX"
-  SmartCallingManager.shared.url = URL(string: "https://portal.url")!
+  SmartCallingManager.shared.corporateEmail = "info@company.com"
+  SmartCallingManager.shared.url = URL(string: "https://YOUR_SERVER_ADDRESS")!
 
   return true
 }
@@ -83,8 +107,6 @@ func logOut() { // Hypothetical function defined in the app which is called when
   SmartCallingManager.shared.logOut();
 }
 ```
-
-
 
 ## SSL Pinning
 
@@ -140,6 +162,7 @@ You can refer to the Example application code hosted on SmartCalling iOS Library
 
 ## Background App Refresh
 
+Please note that background refresh is only relevant if you are using our portal to create and manage your campaigns. If you are creating campaigns via your Contact Management System then backround updating will serve no purpose.<br/>
 This native iOS feature can be used to trigger synchronization of SmartCalling contacts even if the application is in the background. Please first follow [this Apple Documentation](https://developer.apple.com/documentation/uikit/core_app/managing_your_app_s_life_cycle/preparing_your_app_to_run_in_the_background/updating_your_app_with_background_app_refresh) page to setup background refresh for your application. After that all you need to do is to start the SmartCalling update process as shown below:
 
 ```swift
@@ -150,8 +173,11 @@ func application(_ application: UIApplication, performFetchWithCompletionHandler
   }
 }
 ```
+Please note that background processes can affect both battery and data usage on your user's device.
+
 ## Anti-Vishing (with CallKit extension)
 
+The following section is only relevant if you are using the SmartCalling Anti-Vishing feature.<br/>
 In order to activate SmartCalling Anti-Vishing feature, you first need to create a Call Directory Extension.
 
 <img src="https://github.com/Smartcalling/SmartCalling-iOS/blob/master/Readme/callkit.png?raw=true" width="400">
@@ -177,3 +203,21 @@ class CallDirectoryHandler: SmartCallingCallDirectoryHandler {
   }
 }
 ```
+
+## Debugging
+
+You can enable debug logs with `SmartCallingManager.shared.setDebugLoggingEnabled(true)` and then the SDK will print additional logs to console for diagnostics. 
+
+## Support & FAQ
+
+If you require support for your SmartCom integration please first request a support account by emailing Donovan@smartcom.net. Once the email is received you will be sent an activation email. Please follow the instructions in the email to set up your account and password. Once complete, you will be able to login to our support system to create tickets. Please note that we only provide one support account per organisation.
+<br/>
+<br/>
+<br/>
+**Q1. What size and format should my campaign images be?**<br/>
+For IOS we recommend a square image (1:1) ideally 200 * 200 pixels in size. For Android we recommend a ratio of 4:3 with a recommended size of 480 * 360 pixels.
+		
+**Q2. Is Client Ready or Are Clients Ready API calls returning True after Push Campaign cancelled**<br/>
+It is possible for a true response if the device in question has been turned off or is not able to receive push notifications.<br/>
+Consider this scenario: Phone A and phone B are both switched on. A push campaign is sent to both phones, each phone receives the push and sets the device up ready to receive a call. A call to 'Is Client Ready' for each device returns true. Phone B is then switched off or moves into an area with no signal. The client sends a 'Cancel Push Campaign' to each device. Because only phone A is able to receive the push, only phone A removes the campaign. Phone B has no signal or is switched off so does not receive the push and is therefor still set up to receive the campaign call. When an 'Is Client Ready' call is now made for each phone, phone A returns false but phone B still returns true because it has not received the cancel push.
+
