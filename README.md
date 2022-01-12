@@ -5,7 +5,7 @@ The SmartCalling library let's you add your company contact details to the iOS A
 
 If you plan to use the SmartCalling Demo app for reference please remember to use your command line app to run `pod install` while in the demo app project folder after you have downloaded the code.
 
-Please report any bugs/issues/suggestions to cj@smartcalling.co.uk
+Please report any bugs/issues/suggestions through Freshdesk, details to register provided below.
 
 ## Pre-Requisites
 
