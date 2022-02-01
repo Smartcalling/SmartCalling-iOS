@@ -38,7 +38,7 @@ This library requires IOS version 12 as a minimum.
 
 This is the recommended method for adding the SmartCalling library into your app. Please follow these instructions to add the SmartCalling library (these instructions are correct as of XCode version 13.2.1):
 
-<img src="./Readme/ios-sp-001.png?raw=true" width="400">
+<img src="./Readme/ios-sp-001.png?raw=true" width="800">
 
 ### Cocoapods
 
