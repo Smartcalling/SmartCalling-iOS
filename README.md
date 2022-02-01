@@ -34,6 +34,12 @@ The IOS library requires two permissions<br/>
 
 This library requires IOS version 12 as a minimum.
 
+### Swift Package
+
+This is the recommended method for adding the SmartCalling library into your app. Please follow these instructions to add the SmartCalling library (these instructions are correct as of XCode version 13.2.1):
+
+![alt text](./ios-sp-001.png)
+
 ### Cocoapods
 
 SmartCallingSDK is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
