@@ -38,7 +38,29 @@ This library requires IOS version 12 as a minimum.
 
 This is the recommended method for adding the SmartCalling library into your app. Please follow these instructions to add the SmartCalling library (these instructions are correct as of XCode version 13.2.1):
 
+1. In XCode, select your project in the project explore, then select the project in the settings area and then select the 'Package Dependencies' option. Now, click the + button to add a new package.
+
 <p align="center"><img src="./Readme/ios-sp-001.png?raw=true" width="800"></p>
+
+2. Enter the SmartCalling repository address (https://github.com/Smartcalling/SmartCalling-iOS.git) into the search field.
+
+<p align="center"><img src="./Readme/ios-sp-002.png?raw=true" width="800"></p>
+
+3. Click the 'Dependency Rule' drop down and select the 'Range of Versions' option.
+
+<p align="center"><img src="./Readme/ios-sp-003.png?raw=true" width="800"></p>
+
+4. Make sure the version values range from 1.0.0 to 2.0.0 and then click the 'Add Package' button.
+
+<p align="center"><img src="./Readme/ios-sp-004.png?raw=true" width="800"></p>
+
+5. In the dialog box that displays, make sure you have selected the correct Target and then click on the 'Add Package' button
+
+<p align="center"><img src="./Readme/ios-sp-005.png?raw=true" width="800"></p>
+
+6. The package has now been added. In the Package Dependencise section of your project explorer, make sure the version is correct. At this time the latest version is 1.6.2.
+
+<p align="center"><img src="./Readme/ios-sp-006.png?raw=true" width="800"></p>
 
 ### Cocoapods
 
