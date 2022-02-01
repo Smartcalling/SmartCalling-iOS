@@ -68,7 +68,7 @@ SmartCallingSDK is available through [CocoaPods](http://cocoapods.org). To insta
 
 `pod 'SmartCallingSDK'`
 
-Make sure you run `pod install` from command line. Note that this technique requires Cocoapods 1.9 and above. 
+Make sure you run `pod install` from command line. Note that this technique requires Cocoapods 1.9 and above. We are aware that there have been some problems with pods on M1 macs which is why we highly recommend using the Swift Package method discussed above.
 
 ### Manual Installation
 
