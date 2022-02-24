@@ -118,7 +118,7 @@ func applicationDidBecomeActive(_ application: UIApplication) {
 4. An assumption is made that your app will have a login process that results in the app receiving user information. For the library to work completely, your login process must return a unique ID for the user logged in. This unique ID must be passed to the library using the following code (where XXX is the unique user ID):
 ```swift
 func loginSucessful(_ userInfo: UserInfo) { // Hypothetical function defined in the app which is called after a successful login.  
-  SmartCallingManager.shared.setClienId("XXX") { error in
+  SmartCallingManager.shared.setClientId("XXX") { error in
     if let error = error {
       print("SmartCalling setClientId Failed: \(error)")
     } else {
