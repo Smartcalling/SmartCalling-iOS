@@ -158,7 +158,7 @@ Replace the URL and FileName parameters with your certificate URL and file name.
 You should only make subsequent calls to the SmartCalling library if this function returns a true result in the completion handler.
 
 
-## Enable Remote Update
+## Enabling Remote Update
 
 Remote profile update works with silent push notifications. The SmartCalling Demo uses Firebase Cloud Messaging to register for push notification. While the demo solution uses FCM as its push solution you are in no way limited to Google Firebase to manage your push notifications. If you are using, or are planning to use, a different system then please let us know and we will make sure your solution is supported. Please follow the [iOS setup instructions on Firebase website](https://firebase.google.com/docs/cloud-messaging/ios/client). When you receive the FCM Token, subscribe to Smartcalling topics and register the token then direct didReceiveRemoteNotification calls to SmartCallingManager's processRemoteNotification function as shown below:
 
@@ -187,6 +187,31 @@ func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: Str
 ```
 
 You can refer to the Example application code hosted on SmartCalling iOS Library GitHub page.
+
+## Enabling Notification Service Extension
+
+Sometimes, for example when the application is force quit by the user, background notification does not wake up the application. In these cases you can utilise notification service extensions to run SmartCalling. Note that a visual notification is mantory for running notification extensions.
+You can refer to the DemoApp for a sample implementation which looks like this:
+
+```swift
+class NotificationService: UNNotificationServiceExtension {
+  override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+    // Setup SmartCallingManager
+    SmartCallingManager.shared.apiKey = "XXXXXX-XXXX-XXXX-XXXX-XXXXXX"
+    SmartCallingManager.shared.url = URL(string: "https://portal-uat.smartcom.net")! // Optional
+    SmartCallingManager.shared.corporateEmail = "info@smartcom.net"
+
+    let isSmartCallingNotification = SmartCallingManager.shared.processRemoteNotification(userInfo: request.content.userInfo) { _ in
+      // Call content handler to present the original notification
+      contentHandler(request.content)
+    }
+
+    if !isSmartCallingNotification { // Not a SmartCalling notification, check for potential other types.
+      contentHandler(request.content)
+    }
+  }
+}
+``` 
 
 ## Background App Refresh
 

@@ -1,1 +1,5 @@
 /Pods
+/.DS_Store
+/.swiftpm/
+/DemoApp/.DS_Store
+/DemoApp/DemoApp.xcodeproj/project.xcworkspace/xcuserdata/

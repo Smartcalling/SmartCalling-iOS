@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // Setup SmartCallingManager
     SmartCallingManager.shared.apiKey = "XXXXXX-XXXX-XXXX-XXXX-XXXXXX"
     SmartCallingManager.shared.url = URL(string: "https://portal-uat.smartcom.net")! // Optional
-    SmartCallingManager.shared.contactGroupName = "SmartCalling"
+    SmartCallingManager.shared.corporateEmail = "info@smartcom.net"
 
     // Setup Background Fetch
     application.setMinimumBackgroundFetchInterval(60 * 60)

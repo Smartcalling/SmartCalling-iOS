@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4761C549E69E36D199C17DF /* Pods_CallKitExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3009BBECE8171786BB3AC8F /* Pods_CallKitExtension.framework */; };
-		F6D23BCF9EC6345D68BD3EC5 /* Pods_DemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D9449C0CAE40A89D023618 /* Pods_DemoApp.framework */; };
+		FB0E9F8328523867001FDB5C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0E9F8228523867001FDB5C /* NotificationService.swift */; };
+		FB0E9F8728523867001FDB5C /* NotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB0E9F8028523867001FDB5C /* NotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB0E9F8D28523A3E001FDB5C /* SmartCalling in Frameworks */ = {isa = PBXBuildFile; productRef = FB0E9F8C28523A3E001FDB5C /* SmartCalling */; };
+		FB0E9F9028523B57001FDB5C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FB0E9F8F28523B57001FDB5C /* FirebaseMessaging */; };
 		FB12ED8E2482DF050032037E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB12ED8D2482DF050032037E /* AppDelegate.swift */; };
 		FB12ED922482DF050032037E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB12ED912482DF050032037E /* ViewController.swift */; };
 		FB12ED952482DF050032037E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB12ED932482DF050032037E /* Main.storyboard */; };
@@ -16,10 +18,17 @@
 		FB12ED9A2482DF080032037E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB12ED982482DF080032037E /* LaunchScreen.storyboard */; };
 		FB65D747255A9FA8009EA3D7 /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65D746255A9FA8009EA3D7 /* CallDirectoryHandler.swift */; };
 		FB65D74C255A9FA8009EA3D7 /* CallKitExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB65D744255A9FA8009EA3D7 /* CallKitExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FB65D766255AA635009EA3D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB5812042491361D00A5F374 /* GoogleService-Info.plist */; };
+		FBDE6A4228523DB900505005 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB5812042491361D00A5F374 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FB0E9F8528523867001FDB5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB12ED822482DF050032037E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB0E9F7F28523867001FDB5C;
+			remoteInfo = NotificationServiceExtension;
+		};
 		FB65D749255A9FA8009EA3D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FB12ED822482DF050032037E /* Project object */;
@@ -30,16 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FB65D731255A9EDF009EA3D7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FB65D74B255A9FA8009EA3D7 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,6 +46,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				FB65D74C255A9FA8009EA3D7 /* CallKitExtension.appex in Embed App Extensions */,
+				FB0E9F8728523867001FDB5C /* NotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,12 +54,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		46D9449C0CAE40A89D023618 /* Pods_DemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E63ABE5B70DBE5949F05BFB /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		A0F55EAD339B6828D31CA047 /* Pods-CallKitExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallKitExtension.release.xcconfig"; path = "Target Support Files/Pods-CallKitExtension/Pods-CallKitExtension.release.xcconfig"; sourceTree = "<group>"; };
-		BFD9B1517BE1893344FEE04F /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		E3009BBECE8171786BB3AC8F /* Pods_CallKitExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallKitExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F99C486B5D1329DE78879F93 /* Pods-CallKitExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallKitExtension.debug.xcconfig"; path = "Target Support Files/Pods-CallKitExtension/Pods-CallKitExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		FB0E9F8028523867001FDB5C /* NotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0E9F8228523867001FDB5C /* NotificationService.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		FB0E9F8428523867001FDB5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB12ED8A2482DF050032037E /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB12ED8D2482DF050032037E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB12ED912482DF050032037E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,11 +72,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FB0E9F7D28523867001FDB5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB12ED872482DF050032037E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D23BCF9EC6345D68BD3EC5 /* Pods_DemoApp.framework in Frameworks */,
+				FB0E9F9028523B57001FDB5C /* FirebaseMessaging in Frameworks */,
+				FB0E9F8D28523A3E001FDB5C /* SmartCalling in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,23 +92,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4761C549E69E36D199C17DF /* Pods_CallKitExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		145DDE9DDF6C8090A60435A5 /* Pods */ = {
+		FB0E9F8128523867001FDB5C /* NotificationServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
-				BFD9B1517BE1893344FEE04F /* Pods-DemoApp.debug.xcconfig */,
-				6E63ABE5B70DBE5949F05BFB /* Pods-DemoApp.release.xcconfig */,
-				F99C486B5D1329DE78879F93 /* Pods-CallKitExtension.debug.xcconfig */,
-				A0F55EAD339B6828D31CA047 /* Pods-CallKitExtension.release.xcconfig */,
+				FB0E9F8228523867001FDB5C /* NotificationService.swift */,
+				FB0E9F8428523867001FDB5C /* Info.plist */,
 			);
-			name = Pods;
-			path = ../Pods;
+			path = NotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		FB12ED812482DF050032037E = {
@@ -111,9 +112,9 @@
 			children = (
 				FB12ED8C2482DF050032037E /* DemoApp */,
 				FB65D745255A9FA8009EA3D7 /* CallKitExtension */,
+				FB0E9F8128523867001FDB5C /* NotificationServiceExtension */,
 				FB12ED8B2482DF050032037E /* Products */,
 				FB12EDA12482DF110032037E /* Frameworks */,
-				145DDE9DDF6C8090A60435A5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +123,7 @@
 			children = (
 				FB12ED8A2482DF050032037E /* DemoApp.app */,
 				FB65D744255A9FA8009EA3D7 /* CallKitExtension.appex */,
+				FB0E9F8028523867001FDB5C /* NotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,8 +146,6 @@
 		FB12EDA12482DF110032037E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46D9449C0CAE40A89D023618 /* Pods_DemoApp.framework */,
-				E3009BBECE8171786BB3AC8F /* Pods_CallKitExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,24 +162,43 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FB0E9F7F28523867001FDB5C /* NotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB0E9F8A28523867001FDB5C /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */;
+			buildPhases = (
+				FB0E9F7C28523867001FDB5C /* Sources */,
+				FB0E9F7D28523867001FDB5C /* Frameworks */,
+				FB0E9F7E28523867001FDB5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationServiceExtension;
+			productName = NotificationServiceExtension;
+			productReference = FB0E9F8028523867001FDB5C /* NotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FB12ED892482DF050032037E /* DemoApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB12ED9E2482DF080032037E /* Build configuration list for PBXNativeTarget "DemoApp" */;
 			buildPhases = (
-				7942DD96256FE5B5FC02212D /* [CP] Check Pods Manifest.lock */,
 				FB12ED862482DF050032037E /* Sources */,
 				FB12ED872482DF050032037E /* Frameworks */,
 				FB12ED882482DF050032037E /* Resources */,
-				2DF4FD6F0C33971D49563731 /* [CP] Embed Pods Frameworks */,
-				FB65D731255A9EDF009EA3D7 /* Embed Frameworks */,
 				FB65D74B255A9FA8009EA3D7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FB65D74A255A9FA8009EA3D7 /* PBXTargetDependency */,
+				FB0E9F8628523867001FDB5C /* PBXTargetDependency */,
 			);
 			name = DemoApp;
+			packageProductDependencies = (
+				FB0E9F8C28523A3E001FDB5C /* SmartCalling */,
+				FB0E9F8F28523B57001FDB5C /* FirebaseMessaging */,
+			);
 			productName = DemoApp;
 			productReference = FB12ED8A2482DF050032037E /* DemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -188,7 +207,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB65D74F255A9FA8009EA3D7 /* Build configuration list for PBXNativeTarget "CallKitExtension" */;
 			buildPhases = (
-				7AE2F7C6D9FE6265D8C716AE /* [CP] Check Pods Manifest.lock */,
 				FB65D740255A9FA8009EA3D7 /* Sources */,
 				FB65D741255A9FA8009EA3D7 /* Frameworks */,
 				FB65D742255A9FA8009EA3D7 /* Resources */,
@@ -208,10 +226,13 @@
 		FB12ED822482DF050032037E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Incall Ltd";
 				TargetAttributes = {
+					FB0E9F7F28523867001FDB5C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					FB12ED892482DF050032037E = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -229,23 +250,35 @@
 				Base,
 			);
 			mainGroup = FB12ED812482DF050032037E;
+			packageReferences = (
+				FB0E9F8B28523A3E001FDB5C /* XCRemoteSwiftPackageReference "SmartCalling-iOS" */,
+				FB0E9F8E28523B57001FDB5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FB12ED8B2482DF050032037E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FB12ED892482DF050032037E /* DemoApp */,
 				FB65D743255A9FA8009EA3D7 /* CallKitExtension */,
+				FB0E9F7F28523867001FDB5C /* NotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FB0E9F7E28523867001FDB5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB12ED882482DF050032037E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FB12ED9A2482DF080032037E /* LaunchScreen.storyboard in Resources */,
-				FB65D766255AA635009EA3D7 /* GoogleService-Info.plist in Resources */,
+				FBDE6A4228523DB900505005 /* GoogleService-Info.plist in Resources */,
 				FB12ED972482DF080032037E /* Assets.xcassets in Resources */,
 				FB12ED952482DF050032037E /* Main.storyboard in Resources */,
 			);
@@ -260,71 +293,15 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2DF4FD6F0C33971D49563731 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7942DD96256FE5B5FC02212D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DemoApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7AE2F7C6D9FE6265D8C716AE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CallKitExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
+		FB0E9F7C28523867001FDB5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0E9F8328523867001FDB5C /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB12ED862482DF050032037E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +322,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FB0E9F8628523867001FDB5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB0E9F7F28523867001FDB5C /* NotificationServiceExtension */;
+			targetProxy = FB0E9F8528523867001FDB5C /* PBXContainerItemProxy */;
+		};
 		FB65D74A255A9FA8009EA3D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FB65D743255A9FA8009EA3D7 /* CallKitExtension */;
@@ -372,6 +354,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FB0E9F8828523867001FDB5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TD42R3XLRE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Incall Ltd. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.smartcalling.demoapp.demo.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FB0E9F8928523867001FDB5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TD42R3XLRE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Incall Ltd. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.co.smartcalling.demoapp.demo.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FB12ED9C2482DF080032037E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,7 +528,6 @@
 		};
 		FB12ED9F2482DF080032037E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFD9B1517BE1893344FEE04F /* Pods-DemoApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -512,7 +551,6 @@
 		};
 		FB12EDA02482DF080032037E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E63ABE5B70DBE5949F05BFB /* Pods-DemoApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -536,7 +574,6 @@
 		};
 		FB65D74D255A9FA8009EA3D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F99C486B5D1329DE78879F93 /* Pods-CallKitExtension.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -560,7 +597,6 @@
 		};
 		FB65D74E255A9FA8009EA3D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0F55EAD339B6828D31CA047 /* Pods-CallKitExtension.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -585,6 +621,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FB0E9F8A28523867001FDB5C /* Build configuration list for PBXNativeTarget "NotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0E9F8828523867001FDB5C /* Debug */,
+				FB0E9F8928523867001FDB5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FB12ED852482DF050032037E /* Build configuration list for PBXProject "DemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -613,6 +658,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FB0E9F8B28523A3E001FDB5C /* XCRemoteSwiftPackageReference "SmartCalling-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Smartcalling/SmartCalling-iOS";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		FB0E9F8E28523B57001FDB5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB0E9F8C28523A3E001FDB5C /* SmartCalling */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB0E9F8B28523A3E001FDB5C /* XCRemoteSwiftPackageReference "SmartCalling-iOS" */;
+			productName = SmartCalling;
+		};
+		FB0E9F8F28523B57001FDB5C /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB0E9F8E28523B57001FDB5C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB12ED822482DF050032037E /* Project object */;
 }
