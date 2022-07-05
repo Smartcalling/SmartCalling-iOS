@@ -197,42 +197,64 @@ To add the Notification Service to your app please follow these steps:
  
 ![NS_001](https://user-images.githubusercontent.com/49951236/177317964-55cd6a40-0232-45b7-bccd-2736bb5679c0.png)
 
+
 2. Scroll down the template list and select the 'Notification Service Extension' option follwoed by the 'Next' button.
 
 ![NS_002](https://user-images.githubusercontent.com/49951236/177318055-91e1ce51-e97c-454d-82a3-237b8fe7660a.png)
+
 
 3. Give your new target a name and then click the 'Finish' button.
 
 ![NS_003](https://user-images.githubusercontent.com/49951236/177318267-6c8fc3ae-a867-41fd-b5dc-47703709fd01.png)
 
+
 4. You may be asked if you want to Activate you new target. Click the 'Activate' button.
 
 ![NS_004](https://user-images.githubusercontent.com/49951236/177318322-b6a7cbbb-cf33-4897-a3e9-120f098214ff.png)
+
 
 5. Your new target will be added to your project using the name you specified.
 
 ![NS_005](https://user-images.githubusercontent.com/49951236/177318456-a7a0e129-2f34-4bd5-a6eb-0c0dcdb3990c.png)
 
+
 6. You must now add the 'Keychain Sharing' capability to the new Notification Service target. First, select the new target in your project settings and then select the 'Signing & Capabilities' tab.
+
+![NS_006](https://user-images.githubusercontent.com/49951236/177318716-1505f683-26b9-440b-92c5-63d43827053b.png)
+
 
 7. Now click the '+' button to add a new capability.
 
+![NS_007](https://user-images.githubusercontent.com/49951236/177318841-8c0dcf61-3c86-41e7-8849-f026a26a2d35.png)
+
+
 8. Scroll down the capabilities list and double click the 'Keychain Sharing' option.
+
+![NS_008](https://user-images.githubusercontent.com/49951236/177318916-2db40919-33f4-448f-bd00-6733bfb0f81a.png)
+
 
 9. You now need to specify the 'Keychain Groups' you want to share so click the '+' button beneath the 'Keychain Groups' box.
 
-10. This will add a default bundle name that matches the notificastion service bundle name, you need to change this to match your main app bundle name.
+![NS_009](https://user-images.githubusercontent.com/49951236/177319003-925f2a7b-7250-48f8-abcb-95d8101564f9.png)
 
-11. Finally, you must adjust the code in the 'didReceive' function of the new 'Notification Service' code file to pass notifications onto the SmartCalling library:
+
+10. This will add a default bundle name that matches the notification service bundle name, you need to change this to match your main app bundle name.
+
+![NS_010](https://user-images.githubusercontent.com/49951236/177319087-af653501-0905-4826-be82-90ed7992baca.png)
+
+![NS_011](https://user-images.githubusercontent.com/49951236/177319247-6707f779-204f-4470-811d-49d219f1d5bb.png)
+
+
+11. Finally, you must adjust the code in the 'didReceive' function of the new 'Notification Service' code file to pass notifications onto the SmartCalling library. The SmartCalling initialisation code must match the code added to your AppDelegate file:
 
 ```swift
 class NotificationService: UNNotificationServiceExtension {
   override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
     // Setup SmartCallingManager
-    SmartCallingManager.shared.apiKey = "XXXXXX-XXXX-XXXX-XXXX-XXXXXX"
-    SmartCallingManager.shared.url = URL(string: "https://portal-uat.smartcom.net")! // Optional
-    SmartCallingManager.shared.corporateEmail = "info@smartcom.net"
-
+    SmartCallingManager.shared.apiKey = "XXXX-XXXX-XXXX-XXXX"
+    SmartCallingManager.shared.corporateEmail = "info@company.com"
+    SmartCallingManager.shared.url = URL(string: "https://YOUR_SERVER_ADDRESS")!
+  
     let isSmartCallingNotification = SmartCallingManager.shared.processRemoteNotification(userInfo: request.content.userInfo) { _ in
       // Call content handler to present the original notification
       contentHandler(request.content)
