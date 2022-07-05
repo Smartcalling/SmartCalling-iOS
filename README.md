@@ -194,18 +194,23 @@ Sometimes, for example when the application is force quit by the user, backgroun
 To add the Notification Service to your app please follow these steps:
 
 1. First select your project in the Project Navigator and then click the '+' button to add a new target.
+ 
 ![NS_001](https://user-images.githubusercontent.com/49951236/177317964-55cd6a40-0232-45b7-bccd-2736bb5679c0.png)
 
 2. Scroll down the template list and select the 'Notification Service Extension' option follwoed by the 'Next' button.
+
 ![NS_002](https://user-images.githubusercontent.com/49951236/177318055-91e1ce51-e97c-454d-82a3-237b8fe7660a.png)
 
 3. Give your new target a name and then click the 'Finish' button.
+
 ![NS_003](https://user-images.githubusercontent.com/49951236/177318267-6c8fc3ae-a867-41fd-b5dc-47703709fd01.png)
 
 4. You may be asked if you want to Activate you new target. Click the 'Activate' button.
+
 ![NS_004](https://user-images.githubusercontent.com/49951236/177318322-b6a7cbbb-cf33-4897-a3e9-120f098214ff.png)
 
 5. Your new target will be added to your project using the name you specified.
+
 ![NS_005](https://user-images.githubusercontent.com/49951236/177318456-a7a0e129-2f34-4bd5-a6eb-0c0dcdb3990c.png)
 
 6. You must now add the 'Keychain Sharing' capability to the new Notification Service target. First, select the new target in your project settings and then select the 'Signing & Capabilities' tab.
