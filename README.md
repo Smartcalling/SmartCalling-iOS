@@ -198,7 +198,7 @@ To add the Notification Service to your app please follow these steps:
 ![NS_001](https://user-images.githubusercontent.com/49951236/177317964-55cd6a40-0232-45b7-bccd-2736bb5679c0.png)
 
 
-2. Scroll down the template list and select the 'Notification Service Extension' option follwoed by the 'Next' button.
+2. Scroll down the template list and select the 'Notification Service Extension' option followed by the 'Next' button.
 
 ![NS_002](https://user-images.githubusercontent.com/49951236/177318055-91e1ce51-e97c-454d-82a3-237b8fe7660a.png)
 
