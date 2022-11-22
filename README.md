@@ -58,7 +58,7 @@ This is the recommended method for adding the SmartCalling library into your app
 
 <p align="center"><img src="./Readme/images/ios-sp-005.png?raw=true" width="800"></p>
 
-6. The package has now been added. In the Package Dependencise section of your project explorer, make sure the version is correct. At this time the latest version is 1.6.2.
+6. The package has now been added. In the Package Dependencise section of your project explorer, make sure the version is correct. At this time the latest version is 1.6.7.
 
 <p align="center"><img src="./Readme/images/ios-sp-006.png?raw=true" width="800"></p>
 
