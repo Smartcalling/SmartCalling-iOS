@@ -1,4 +1,3 @@
-
 # SmartCalling iOS Library
 
 The SmartCalling library let's you add your company contact details to the iOS AddressBook. In this way users of your app will see a personalised screen when they receive a call from your company.
@@ -90,10 +89,18 @@ import SmartCalling
 ```
 
 2. If you haven't already, you will need to add your app to the SmartCom portal (see above). Once this is done, you will be provided with an API Key. Before using any other functions of the library, the API Key needs to be set.<br/>
-The SDK will set an email address to the contacts it creates which should be unique to your application. The SDK will run queries for that email and it is important that you set a unique corportateEmail when you initialize SmartCallingManager.<br/>
+The SDK will set an email address to the contacts it creates which should be unique to your application. The SDK will run queries for that email and it is important that you set a unique corporate email when you initialize SmartCallingManager.<br/>
 The library uses the SmartCalling servers by default. If you do not intend to use your own server then you must use our UAT server for testing (https://portal-uat.smartcom.net/). Once you are ready to go live you will need to contact SmartCom to enable your organisation on the live server, you will then be provided with our live server address.<br/>If you are using your own server, just override the value as shown below:
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  SmartCallingManager.shared.setCertificateLocation(url: "https://portal.smartcom.net/assets/app/", fileName: "scportal-prod.der") { result in
+    if (result) {
+      print("Certificate Download Success");
+    }
+    else {
+      print("Certificate Download Failed");
+    }
+  }
   SmartCallingManager.shared.apiKey = "XXXX-XXXX-XXXX-XXXX"
   SmartCallingManager.shared.corporateEmail = "info@company.com"
   SmartCallingManager.shared.url = URL(string: "https://YOUR_SERVER_ADDRESS")!
@@ -208,7 +215,7 @@ To add the Notification Service to your app please follow these steps:
 ![NS_003](https://user-images.githubusercontent.com/49951236/177318267-6c8fc3ae-a867-41fd-b5dc-47703709fd01.png)
 
 
-4. You may be asked if you want to Activate you new target. Click the 'Activate' button.
+4. You may be asked if you want to Activate your new target. Click the 'Activate' button.
 
 ![NS_004](https://user-images.githubusercontent.com/49951236/177318322-b6a7cbbb-cf33-4897-a3e9-120f098214ff.png)
 
@@ -251,6 +258,14 @@ To add the Notification Service to your app please follow these steps:
 class NotificationService: UNNotificationServiceExtension {
   override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
     // Setup SmartCallingManager
+    SmartCallingManager.shared.setCertificateLocation(url: "https://portal.smartcom.net/assets/app/", fileName: "scportal-prod.der") { result in
+      if (result) {
+        print("Certificate Download Success");
+      }
+      else {
+        print("Certificate Download Failed");
+      }
+    }
     SmartCallingManager.shared.apiKey = "XXXX-XXXX-XXXX-XXXX"
     SmartCallingManager.shared.corporateEmail = "info@company.com"
     SmartCallingManager.shared.url = URL(string: "https://YOUR_SERVER_ADDRESS")!
@@ -327,4 +342,3 @@ For IOS we recommend a square image (1:1) ideally 200 * 200 pixels in size. For 
 **Q2. Is Client Ready or Are Clients Ready API calls returning True after Push Campaign cancelled**<br/>
 It is possible for a true response if the device in question has been turned off or is not able to receive push notifications.<br/>
 Consider this scenario: Phone A and phone B are both switched on. A push campaign is sent to both phones, each phone receives the push and sets the device up ready to receive a call. A call to 'Is Client Ready' for each device returns true. Phone B is then switched off or moves into an area with no signal. The client sends a 'Cancel Push Campaign' to each device. Because only phone A is able to receive the push, only phone A removes the campaign. Phone B has no signal or is switched off so does not receive the push and is therefor still set up to receive the campaign call. When an 'Is Client Ready' call is now made for each phone, phone A returns false but phone B still returns true because it has not received the cancel push.
-
