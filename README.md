@@ -1,6 +1,6 @@
 # SmartCalling iOS Library
 
-The SmartCalling library let's you add your company contact details to the iOS AddressBook. In this way users of your app will see a personalised screen when they receive a call from your company.
+The SmartCalling library let's you add your company contact details to the iOS AddressBook. In this way users of your app will see a personalised screen when they receive calls from your company.
 
 If you plan to use the SmartCalling Demo app for reference please remember to use your command line app to run `pod install` while in the demo app project folder after you have downloaded the code.
 
